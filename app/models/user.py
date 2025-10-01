@@ -14,8 +14,8 @@ class User(Base):
     gender = Column(String, nullable=False)
     phone = Column(String)
 
-    posts = relationship('Post', back_populates='author', cascade='all, delete-orphan')
-    comments = relationship('Comment', back_populates='user', cascade='all, delete-orphan')
+    relationship('Post', back_populates='author', cascade='all, delete-orphan')
+    # comments = relationship('Comment', back_populates='user', cascade='all, delete-orphan')
 
     def __repr__(self):
         return f"User(id={self.id}, first_name={self.first_name}, last_name={self.last_name}, username={self.username}, phone={self.phone})"

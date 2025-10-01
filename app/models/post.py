@@ -12,8 +12,8 @@ class Post(Base):
     description = Column(Text)
     author_id = Column(ForeignKey('users.id'), nullable=False)
 
-    author = relationship('User', back_populates='posts')
-    comments = relationship('Comment', back_populates='post', cascade='all, delete-orphan')
+    # author = relationship('User', back_populates='posts')
+    # comments = relationship('Comment', back_populates='post', cascade='all, delete-orphan')
 
     def __repr__(self):
         return f"Post(id={self.id}, title={self.title}, description={self.description[:20]})"

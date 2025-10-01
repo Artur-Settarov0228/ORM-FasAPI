@@ -67,6 +67,3 @@ def insert_comments():
     db = LocalSession()
     db.bulk_save_objects(comments)
     db.commit()
-
-insert_comments()
-
